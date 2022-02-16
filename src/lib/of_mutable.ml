@@ -255,7 +255,7 @@ module Make (S: Api.MINIMALISTIC_MUTABLE_STRING) : Api.BASIC_STRING
             then raise (Return c)
             else ()
           done;
-          (Pervasives.compare (lena : int) lenb)
+          (Stdlib.compare (lena : int) lenb)
         with
         | Return c -> c
         | Left_out c -> (* a went out of bounds at 'c + idxa' *) -1

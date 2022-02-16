@@ -239,7 +239,7 @@ module Make (Char: Api.BASIC_CHARACTER) :
             | _, _ when len1 = 0 && len2 = 0 -> 0
             | _, _ when len1 = 0 -> -1
             | _, _ when len2 = 0 -> 1
-            | [], [] when len1 = 0 || len2 = 0 -> Pervasives.compare lena lenb
+            | [], [] when len1 = 0 || len2 = 0 -> Stdlib.compare lena lenb
             | [], _ when len1 > 0 -> raise Left
             | _, [] when len2 > 0 -> raise Right
             | h1 :: t1, h2 :: t2 when Char.compare h1 h2 = 0 ->
